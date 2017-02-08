@@ -1,0 +1,14 @@
+<?php
+include"konek.php";
+mysql_select_db("momo") or die ("Gagal membuka database.");
+
+     $kode = $_POST['kode'];
+     $nama = $_POST['nama'];
+     $harga = $_POST['harga'];
+     $stok = $_POST['stok']    
+             
+             $query = mysql_query("update databarang set nama='$nama', harga='$harga', stok='$stok' where kode='$kode'");
+
+mysql_close($sambung);
+?>
+<p> Data sudah ter-update, Silahkan cek di <a href="tampil.php">Tabel Data</a></p>
